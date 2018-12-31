@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UW Bombshelter Replacement Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="form.css" />
+</head>
+<body>
+    <h1 id="title">The Bomber Replacement Survey</h1>
+    <div id="form-container">
+        <p id="description">As The Bombshelter Pub closed down, what type of space would you like FEDS to provide?</p>
+        <form id="survey-form">
+            <p>
+                <label for="name-label">
+                    Name: <input id="name" type="text" name="full-name">
+                </label>
+            </p>
+            <p>
+                <label for="email-label">
+                    Email: <input id="email" type="email" name="emailAddr" placeholder="example@edu.uwaterloo.ca">
+                </label>
+            </p>
+            <p>
+                <label for="uwID-label">
+                    Student ID#: <input id="uwID" type="number" name="studentID" minlength="8" maxlength="8">
+                </label>
+            </p>
+            <p>
+                <label for="year-label">
+                    Enrolment Year: <input id="year" type="number" min="1957" max="2018" step="1" name="enrolYear" placeholder="e.g. 2017">
+                </label>
+            </p>
+            <p>
+                <label for="affiliation">
+                    I am a/an: <select id="affiliation" name="currentAffil">
+                        <option disabled value selected> Select one</option>
+                        <option value="undergrad">Undergraduate Student</option>
+                        <option value="graduate">Graduate Student</option>
+                        <option value="alumni">Alumni</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label for="attendance">
+                    Have you used services at the Bombshelter before? (Bomber Wednesday, Thursday Trivia, Bomber Breakfast, etc.)
+                    <ul>
+                        <li>
+                            <label>
+                                "Yes"
+                                <input type="radio" name="attended" value="1">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                "No"
+                                <input type="radio" name="attended" value="0">
+                            </label>
+                        </li>
+                    </ul>
+                </label>
+            </p>
+            <p>
+                <label for="services">
+                    What type of services would you like to see?
+                    <ul>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="services" value="1">
+                                "Retail (e.g. Waterloo Store)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="services" value="2">
+                                "Food (e.g. McDonalds)"
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="services" value="3">
+                                "Study Area"
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="services" value="4">
+                                "Entertainment" (e.g. Permanent arcade room)
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="services" value="5">
+                                "UW Clubs Space" (e.g. Night Market, Film)
+                            </label>
+                        </li>
+                    </ul>
+                </label>
+            </p>
+            <p>
+                <label for="comments">
+                    Additions Comments/Suggestions:
+                    <!-- textarea needs to stick to one line for placeholder text to show. otherwise newline char overrides text-->
+                    <textarea id="comments" name="comments" placeholder="Add any other comments or suggestions here"></textarea>
+                </label>
+            </p>
+            <button type="submit">
+                Submit
+            </button>
+        </form>
+    </div>
+</body>
+</html>
