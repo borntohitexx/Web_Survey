@@ -16,7 +16,7 @@ body{
     padding: 2%;
     background: #eff1ff;
     border-radius: 15px;
-    min-width:350px;
+    min-width:380px;
 }
 
 #description {
@@ -45,7 +45,6 @@ body{
 }
 
 /** checkbox css prevents labels from wrapping underneath checkbox **/
-
 input[type="checkbox"] {
     position:absolute;
 }
@@ -56,13 +55,42 @@ label[for="checkbox"] {
 }
 
 /** setting the width and height of the text input**/
-#name, #email, #uwID, #year, #affiliation{
+#name, #email, #uwID, #year, #dropdown{
     width: 220px;
     height: 20px;
+    border-radius: 0.3rem;
+    border: 1px solid #cdcdcd;
+}
+
+/** add glowing border to specified input boxes**/
+#name:focus, #email:focus, #uwID:focus, #year:focus, #dropdown:focus, #comments:focus {
+    border: none;
+    box-shadow: 0 0 10px rgb(81, 188, 224);
+}
+
+/** placeholder text too close to left side of input box **/
+#name, #email, #uwID, #year, #comments {
+    text-indent: 5px;
+}
+
+/** make placeholder text less apparent with lighter colour **/
+#name::placeholder, #email::placeholder, #uwID::placeholder, #year::placeholder, #comments::placeholder {
+    color: #B0BEC5;
+}
+
+/** hide spin button for number input fields **/
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .no-bullets {
     list-style-type: none;
+}
+
+/** add required star to labels that describe required fields **/
+label[for="name-label"]::before, label[for="email-label"]::before, label[for="uwID-label"]::before, label[for="dropdown"]::before, label[for="attendance"]::before, label[for="services"]::before {
+    content: "* ";
+    color: red;
 }
 
 /** separate left and right positioning and styling for text area **/
@@ -78,6 +106,9 @@ label[for="comments"] {
     width: 45%;
     height: 150px;
     margin-left: 20px;
+    resize: none;
+    border-radius: 0.3rem;
+    border: 1px solid #cdcdcd;
 }
 
 button {
@@ -88,16 +119,34 @@ button {
     background:rgb(127, 213, 235);
     width: 100px;
     height: 50px;
-    color:white;
+    color: black;
     font-size: 1em;
     font-weight: 700;
-    text-shadow: 0px 0px 1px #000, 
-                 0px -1px 0px #000,
-                 1px 0px 0px #000,
-                 0px 1px 0px #000,
-                 -1px 0px 0px #000;
+    text-shadow: 0px 0px 1px #FFF, 
+                 0px -1px 0px #FFF,
+                 1px 0px 0px #FFF,
+                 0px 1px 0px #FFF,
+                 -1px 0px 0px #FFF;
 }
 
 button:hover {
     background: rgb(171, 222, 235);
+}
+
+@media screen and (max-width: 728px) {
+    label[for="services"] {
+        text-align:center;
+        width: 100px;
+    }
+    
+    label[for="comments"] {
+        text-align:center;
+        width: 200px;
+        margin-bottom: 1rem;
+    }
+
+    #comments {
+        width: 300px;
+        margin: 0;
+    }
 }

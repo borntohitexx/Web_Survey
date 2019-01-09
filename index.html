@@ -14,23 +14,23 @@
         <form id="survey-form">
             <div class="row">
                 <label for="name-label" class="left">Name:</label>
-                <input id="name" class="right" type="text" name="full-name">
+                <input id="name" class="right" type="text" name="full-name" placeholder="Enter full name" required>
             </div>
             <div class="row">
                 <label for="email-label" class="left">Email:</label>
-                <input id="email" class="right" type="email" name="emailAddr" placeholder="example@edu.uwaterloo.ca">
+                <input id="email" class="right" type="email" name="emailAddr" placeholder="example@edu.uwaterloo.ca" required>
             </div>
             <div class="row">
                 <label for="uwID-label" class="left">Student ID#:</label>
-                <input id="uwID" class="right" type="number" name="studentID" minlength="8" maxlength="8">
+                <input id="uwID" class="right" type="number" name="studentID" minlength="8" maxlength="8" step="1" placeholder="Enter student number" required>
             </div>
             <div class="row">
                 <label for="year-label" class="left">Enrolment Year:</label>
                 <input id="year" class="right" type="number" min="1957" max="2018" step="1" name="enrolYear" placeholder="e.g. 2017">
             </div>
             <div class="row">
-                <label for="affiliation" class="left">I am a/an:</label>
-                <select id="affiliation" class="right" name="currentAffil">
+                <label for="dropdown" class="left">I am a/an:</label>
+                <select id="dropdown" class="right" name="dropdown" required>
                     <option disabled value selected> Select one</option>
                     <option value="undergrad">Undergraduate Student</option>
                     <option value="graduate">Graduate Student</option>
@@ -44,11 +44,11 @@
                 <ul class="no-bullets">
                     <li>
                         <label>"Yes"</label>
-                         <input type="radio" name="attended" value="1">
+                         <input type="radio" name="attended" value="1" required>
                     </li>
                     <li>
                         <label>"No"</label>
-                        <input type="radio" name="attended" value="0">
+                        <input type="radio" name="attended" value="0" required>
                     </li>
                 </ul>
             </div>
@@ -56,24 +56,28 @@
                 <label for="services" class="left" style="padding-block-end: 15%;"> What type of services would you like to see?</label>
                 <ul class="no-bullets right">
                     <li>
-                        <input type="checkbox" name="services" value="1">
-                        <label for="checkbox">"Retail (e.g. Waterloo Store)</label>
+                        <input type="checkbox" name="services" value="1" required>
+                        <label for="checkbox">Retail (e.g. Waterloo Store)</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="services" value="2">
-                        <label for="checkbox">"Food" (e.g. McDonalds)</label>
+                        <input type="checkbox" name="services" value="2" required>
+                        <label for="checkbox">Food (e.g. McDonalds)</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="services" value="3">
-                        <label for="checkbox">"Study Area"</label>
+                        <input type="checkbox" name="services" value="3" required>
+                        <label for="checkbox">Study Area</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="services" value="4">
-                        <label for="checkbox">"Entertainment" (e.g. Permanent arcade room)</label>
+                        <input type="checkbox" name="services" value="4" required>
+                        <label for="checkbox">Entertainment (e.g. Arcade room)</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="services" value="5">
-                        <label for="checkbox">"UW Clubs Space" (e.g. Night Market, Film)</label>
+                        <input type="checkbox" name="services" value="5" required>
+                        <label for="checkbox">UW Clubs Space (e.g. Night Market)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="services" value="6" required>
+                        <label for="checkbox">Other (Please suggest below)</label>
                     </li>
                 </ul>
             </div>
@@ -82,7 +86,7 @@
                 <!-- textarea needs to stick to one line for placeholder text to show. otherwise newline char overrides text-->
                 <textarea id="comments" name="comments" placeholder="Add any other comments or suggestions here"></textarea>
             </div>
-            <button type="submit">
+            <button id="submit" type="submit">
                 Submit
             </button>
         </form>
